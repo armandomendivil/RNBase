@@ -3,7 +3,9 @@ import { Text } from 'react-native'
 import { TabBar, TabBarIcon } from '@components'
 import { Color, Images } from '@common';
 import { StackNavigator, TabNavigator } from 'react-navigation';
+
 import HomeScreen from './HomeScreen';
+import SettingScreen from './SettingScreen'
 
 const HomeStack = StackNavigator({
   Home: { screen: HomeScreen },
@@ -17,6 +19,8 @@ export default TabNavigator({
       tabBarIcon: ({tintColor}) => <TabBarIcon icon={Images.IconHome} tintColor={tintColor}/>,
     },
   },
+
+  SettingScreen: {screen: SettingScreen},
 },
 {
   tabBarComponent: TabBar,

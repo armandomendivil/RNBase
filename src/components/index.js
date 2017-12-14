@@ -1,3 +1,6 @@
+import _Button from './Button/Button';
+export const Button = _Button;
+
 import _Drawer from './Drawer';
 export const Drawer = _Drawer;
 

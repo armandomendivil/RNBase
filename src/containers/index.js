@@ -6,3 +6,6 @@ export const MyToast = _MyToast;
 
 import _MyNetInfo from './MyNetInfo';
 export const MyNetInfo = _MyNetInfo;
+
+import _Setting from './Setting';
+export const Setting = _Setting;

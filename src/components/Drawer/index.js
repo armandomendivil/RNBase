@@ -39,7 +39,7 @@ class Drawer extends Component {
       {
         text: Languages.Settings,
         onPress: () => goToScreen('SettingScreen', undefined, true),
-        // icon: Icons.MaterialCommunityIcons.Settings,
+        icon: Icons.MaterialCommunityIcons.Settings,
       },
       !user
         ? {

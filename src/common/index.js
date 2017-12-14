@@ -4,6 +4,9 @@ export const Device = _Device;
 import _Events from './Events';
 export const Events = _Events;
 
+import _Icons from './Icons';
+export const Icons = _Icons;
+
 import _Images from './Images';
 export const Images = _Images;
 
