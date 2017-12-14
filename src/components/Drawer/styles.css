@@ -1,0 +1,28 @@
+.container {
+  background-color: "JS(Color.primary)";
+  flex-grow:  1;
+  padding-top: 20;
+}
+.avatar {
+  height: "JS(Styles.width / 4)";
+  width: "JS(Styles.width / 4)";
+  border-radius: "JS(Styles.width / 8)";
+  /*margin-right: 20;*/
+  margin-bottom: 20;
+}
+.avatar_background{
+  padding: 20;
+  background-color: "JS(Color.primary)";
+}
+.fullName {
+  font-weight: 600;
+  color: white;
+  background-color: transparent;
+  font-size: "JS(Styles.FontSize.medium)";
+  margin-bottom: 6;
+}
+.email {
+  color: #FFF;
+  background-color: transparent;
+  font-size: 13;
+}

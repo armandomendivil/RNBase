@@ -1,4 +1,6 @@
-import { AppRegistry } from 'react-native';
-import App from './App';
+import React from 'react';
 
-AppRegistry.registerComponent('RNBase', () => App);
+import {AppRegistry} from 'react-native';
+import ReduxWrapper from './src/ReduxWrapper';
+
+AppRegistry.registerComponent('RNBase', () => ReduxWrapper);
