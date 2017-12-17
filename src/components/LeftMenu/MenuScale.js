@@ -17,16 +17,16 @@ export default class MenuScale extends Component {
 
   }
   closeSideMenu = () => {
-    if (typeof this.drawer != 'undefined') {
-      if (Platform.OS == 'android') {
+    if (typeof this.drawer !== 'undefined') {
+      if (Platform.OS === 'android') {
         return this.drawer.closeDrawer();
       }
       this.drawer.close();
     }
   }
   openSideMenu = () => {
-    if (typeof this.drawer != 'undefined') {
-      if (Platform.OS == 'android') {
+    if (typeof this.drawer !== 'undefined') {
+      if (Platform.OS === 'android') {
         return this.drawer.openDrawer();
       }
       this.drawer.open();

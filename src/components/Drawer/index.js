@@ -10,26 +10,23 @@ import styles from './styles';
 class Drawer extends Component {
   constructor(props) {
     super(props);
-    this.state= {reload: false}
-
+    this.state = { reload: false };
   }
 
   componentDidMount(){
     EventEmitter.addListener(Constants.EmitCode.MenuReload, this.setLanguage.bind(this));
-
   }
+
   setLanguage(lang){
-    Languages.setLanguage(lang)
-    this.setState({reload: true})
+    Languages.setLanguage(lang);
+    this.setState({ reload: true });
   }
 
   render() {
-    //const {} = this.state;
-    const {goToScreen} = this.props;
+    const { goToScreen } = this.props;
     const user = this.props.user;
-    // console.log("user Drawer:::", user);
     console.log(Languages);
-    //TODO: move this list to constructor after finish
+
     this.buttonList = [
       {
         text: Languages.home,
@@ -54,16 +51,16 @@ class Drawer extends Component {
         },
     ];
 
-    const avatar = (user && user.avatar_url) ? {uri: user.avatar_url} : (user && user.picture) ? {uri: user.picture.data.url} : Images.defaultAvatar;
+    const avatar = (user && user.avatar_url) ? { uri: user.avatar_url } : (user && user.picture) ? { uri: user.picture.data.url } : Images.defaultAvatar;
     const name = () => {
-      if(user != null ){
-        if(typeof user.last_name != 'undefined' || typeof user.first_name != 'undefined' ){
-          let first = user.first_name != null ? user.first_name : '';
-          let last =  user.last_name != null ? user.last_name : '';
+      if (user !== null ) {
+        if (typeof user.last_name !== 'undefined' || typeof user.first_name !== 'undefined' ) {
+          let first = user.first_name !== null ? user.first_name : '';
+          let last =  user.last_name !== null ? user.last_name : '';
           return first + ' ' + last;
-        }else if(typeof user.name != 'undefined' && user.name != null){
+        } else if (typeof user.name !== 'undefined' && user.name !== null) {
           return user.name;
-        }else{
+        } else {
           return Languages.GuestAccount;
         }
       }
@@ -84,15 +81,14 @@ class Drawer extends Component {
         </ScrollView>
       </View>
 
-    if(this.state.reload){
+    if (this.state.reload) {
       return menu();
     }
-    return menu()
+    return menu();
   }
 }
 
 
-const mapStateToProps = ({user}) => ({ user: {} })
-
+const mapStateToProps = ({ user }) => ({ user: {} })
 
 module.exports = connect(mapStateToProps)(Drawer);
