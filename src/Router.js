@@ -19,8 +19,7 @@ import MenuSide from '@components/LeftMenu/MenuScale';
 let store = null;
 if (__DEV__) {
   store = Reactotron.createStore(reducers, compose(applyMiddleware(...middleware), autoRehydrate()));
-}
-else {
+} else {
   store = compose(applyMiddleware(...middleware), autoRehydrate())(createStore)(reducers);
 }
 
@@ -29,6 +28,7 @@ persistStore(store, {
   blacklist: [
     'netInfo',
     'toast',
+    'nav',
   ]
 });
 
@@ -49,7 +49,6 @@ export default class Router extends Component {
 
   render() {
     return (
-      <Provider store={store}>
         <MenuSide
           goToScreen={this.goToScreen}
           routes={
@@ -61,7 +60,6 @@ export default class Router extends Component {
             </View>
           }
         />
-      </Provider>
     )
   }
 }

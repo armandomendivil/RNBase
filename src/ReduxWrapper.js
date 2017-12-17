@@ -7,6 +7,7 @@ import thunk from 'redux-thunk';
 import { Constants, Device, Languages } from '@common';
 import OneSignal from 'react-native-onesignal';
 import { EventEmitter } from '@app/Omni'
+import reducers from '@redux';
 import Reactotron from 'reactotron-react-native';
 import './ReactotronConfig';
 
@@ -16,21 +17,10 @@ const middleware = [
   thunk,
 ];
 
-import { reducer as NetInfoReducer } from './redux/NetInfoRedux';
-import { reducer as ToastReducer } from './redux/ToastRedux';
-import { reducer as LangRedux} from './redux/LangRedux';
-
-const reducers = combineReducers({
-  netInfo: NetInfoReducer,
-  toast: ToastReducer,
-  language: LangRedux,
-});
-
 var store = null;
 if (__DEV__) {
   store = Reactotron.createStore(reducers, compose(applyMiddleware(...middleware), autoRehydrate({log: true})));
-}
-else {
+} else {
   store = compose(applyMiddleware(...middleware), autoRehydrate())(createStore)(reducers);
 }
 
