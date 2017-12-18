@@ -1,12 +1,13 @@
-import React, {Component} from "react";
-import {View, Platform, Image, TouchableOpacity} from 'react-native';
+import React, { Component } from 'react';
+import { Text, View, Platform, Image, TouchableOpacity } from 'react-native';
 
 import { Styles, Color, Icons, Device, Constants, Events, Images, Config, Languages } from '@common'
 import { NavigationBarIcon } from '@components'
 import { openDrawer } from "@app/Omni"
 
 // Icons for HeaderBar
-const Logo = () => <Image source={Config.LogoImage} style={Styles.Common.logo}/>
+// const Logo = () => <Image source={Config.LogoImage} style={Styles.Common.logo}/>
+const Logo = () => <Text style={Styles.Common.logo}>Logo</Text>
 
 const hitSlop = {top: 20, right: 20, bottom: 20, left: 20};
 const Menu = () => (
@@ -44,4 +45,4 @@ const Back = (navigation, iconBack) => (<TouchableOpacity
 </TouchableOpacity>)
 
 
-export {Logo, Menu, HeaderRight, EmptyView, HeaderHomeRight, Back}
+export { Logo, Menu, HeaderRight, EmptyView, HeaderHomeRight, Back };

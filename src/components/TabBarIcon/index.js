@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
 class TabBarIcon extends Component {
 
   render() {
-    const {icon, tintColor, css, carts, cartIcon, wishList, wishlistIcon} = this.props;
+    const { icon, tintColor, css, carts, cartIcon, wishList, wishlistIcon } = this.props;
 
     const numberWrap = (number = 0) => (<View style={styles.numberWrap}>
       <Text style={styles.number}>{number}</Text>

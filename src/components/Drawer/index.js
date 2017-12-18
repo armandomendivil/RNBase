@@ -38,17 +38,22 @@ class Drawer extends Component {
         onPress: () => goToScreen('SettingScreen', undefined, true),
         icon: Icons.MaterialCommunityIcons.Settings,
       },
-      !user
-        ? {
-        text: Languages.Login,
-        // icon: Icons.MaterialCommunityIcons.SignIn,
-        onPress: () => goToScreen('LoginScreen', {isLogout: false}, true),
-      } :
-        {
-          text: Languages.Logout,
-          // icon: Icons.MaterialCommunityIcons.SignOut,
-          onPress: () => goToScreen('LoginScreen', {isLogout: true}, true),
-        },
+      {
+        text: 'Contact Us',
+        onPress: () => goToScreen('ContactUsScreen', undefined, true),
+        icon: Icons.MaterialCommunityIcons.Pin,
+      },
+      // !user
+      //   ? {
+      //   text: Languages.Login,
+      //   // icon: Icons.MaterialCommunityIcons.SignIn,
+      //   onPress: () => goToScreen('LoginScreen', {isLogout: false}, true),
+      // } :
+      //   {
+      //     text: Languages.Logout,
+      //     // icon: Icons.MaterialCommunityIcons.SignOut,
+      //     onPress: () => goToScreen('LoginScreen', {isLogout: true}, true),
+      //   },
     ];
 
     const avatar = (user && user.avatar_url) ? { uri: user.avatar_url } : (user && user.picture) ? { uri: user.picture.data.url } : Images.defaultAvatar;

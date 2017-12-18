@@ -96,6 +96,39 @@ Styles.Common = {
     alignItems: 'center',
     justifyContent: 'space-between',
   },
+
+  logo: {
+    width: Platform.OS === 'ios' ? 180 : 300,
+    height: Platform.OS === 'ios' ? 20 : 60,
+    resizeMode: 'contain',
+    ...Platform.select({
+      ios: {
+        marginTop: Device.isIphoneX ? -8 : 2,
+      },
+      android: {
+        marginTop: 2,
+      }
+    })
+  },
+
+  toolbarIcon: {
+    width: 16,
+    height: 16,
+    resizeMode: 'contain',
+
+    marginRight: 12,
+    marginBottom: 12,
+    marginLeft: 8,
+    opacity: 0.8,
+    ...Platform.select({
+      ios: {
+        marginTop: Config.showStatusBar ? (Device.isIphoneX ? -20 : 7) : (Device.isIphoneX ? -30 : -3 ),
+      },
+      android: {
+        marginTop: 10
+      }
+    })
+  },
 };
 
 export default Styles;
