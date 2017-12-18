@@ -22,7 +22,7 @@ export default TabNavigator({
   },
 
   SettingScreen: {screen: SettingScreen},
-  ContactUsScreen: { screen: ContactUsScreen },
+  // ContactUsScreen: { screen: ContactUsScreen },
 },
 {
   tabBarComponent: TabBar,

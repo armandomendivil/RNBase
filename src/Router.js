@@ -49,6 +49,7 @@ export default class Router extends Component {
 
   render() {
     return (
+      <Provider store={store}>
         <MenuSide
           goToScreen={this.goToScreen}
           routes={
@@ -60,6 +61,7 @@ export default class Router extends Component {
             </View>
           }
         />
+      </Provider>
     )
   }
 }
