@@ -7,7 +7,7 @@ import { openDrawer } from "@app/Omni"
 
 // Icons for HeaderBar
 // const Logo = () => <Image source={Config.LogoImage} style={Styles.Common.logo}/>
-const Logo = () => <Text style={Styles.Common.logo}>Logo</Text>
+const Logo = () => <Text>Logo</Text>
 
 const hitSlop = {top: 20, right: 20, bottom: 20, left: 20};
 const Menu = () => (

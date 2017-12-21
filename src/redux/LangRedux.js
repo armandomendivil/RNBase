@@ -1,4 +1,4 @@
-import { Constants } from "@common"
+import { Constants } from '@common';
 
 const types = {
   SWITCH_LANGUAGE: 'SWITCH_LANGUAGE',
@@ -15,8 +15,11 @@ const initialState = {
 }
 
 export const reducer = (state = initialState, action) => {
-  const { lang } = action;
+  const { lang, payload } = action;
   switch (action.type) {
+    case "persist/REHYDRATE" :
+      const persistLang = payload.language.lang || 'en';
+      return Object.assign({}, state, { lang: persistLang } );
     case types.SWITCH_LANGUAGE:
       return Object.assign({}, state, { lang })
     default:

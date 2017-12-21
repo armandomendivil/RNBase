@@ -32,7 +32,10 @@ class LanguagePicker extends Component {
                         text: Languages.OK, onPress: async () => {
                             this.setState({isLoading: true})
                             await switchLanguage(this.state.selectedOption);
-                            RNRestart.Restart();
+
+                            setTimeout(() => {
+                             RNRestart.Restart();
+                          }, 3000)
 
                         }
                     },
