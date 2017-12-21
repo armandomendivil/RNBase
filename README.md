@@ -14,6 +14,8 @@ npm install
 android: npm run android
 ios: npm run ios
 ```
+## iOS
+![ios_sidemenu](https://user-images.githubusercontent.com/5134490/34270172-7fcf6140-e644-11e7-95ce-04527d25f4b4.gif)
 
 ##License
 
