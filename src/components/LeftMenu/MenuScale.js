@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Menu from 'react-native-drawer';
+import Menu from '@custom/react-native-drawer';
 import { Platform, DrawerLayoutAndroid } from 'react-native';
 import { Events, Constants } from '@common';
 import { Drawer } from '@components';
@@ -17,16 +17,16 @@ export default class MenuScale extends Component {
 
   }
   closeSideMenu = () => {
-    if (typeof this.drawer != 'undefined') {
-      if (Platform.OS == 'android') {
+    if (typeof this.drawer !== 'undefined') {
+      if (Platform.OS === 'android') {
         return this.drawer.closeDrawer();
       }
       this.drawer.close();
     }
   }
   openSideMenu = () => {
-    if (typeof this.drawer != 'undefined') {
-      if (Platform.OS == 'android') {
+    if (typeof this.drawer !== 'undefined') {
+      if (Platform.OS === 'android') {
         return this.drawer.openDrawer();
       }
       this.drawer.open();

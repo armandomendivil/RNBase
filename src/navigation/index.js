@@ -5,7 +5,8 @@ import { Color, Images } from '@common';
 import { StackNavigator, TabNavigator } from 'react-navigation';
 
 import HomeScreen from './HomeScreen';
-import SettingScreen from './SettingScreen'
+import SettingScreen from './SettingScreen';
+import ContactUsScreen from './ContactUsScreen';
 
 const HomeStack = StackNavigator({
   Home: { screen: HomeScreen },
@@ -21,6 +22,7 @@ export default TabNavigator({
   },
 
   SettingScreen: {screen: SettingScreen},
+  // ContactUsScreen: { screen: ContactUsScreen },
 },
 {
   tabBarComponent: TabBar,

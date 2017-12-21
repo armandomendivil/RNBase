@@ -78,7 +78,11 @@ class LanguagePicker extends Component {
     }
 }
 
-const mapStateToProps = (state) => ({language : state.language})
+const mapStateToProps = (state) => {
+  debugger;
+  return ({language : state.language})
+}
+
 
 function mergeProps(stateProps, dispatchProps, ownProps) {
   const {dispatch} = dispatchProps;

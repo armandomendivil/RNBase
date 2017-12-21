@@ -1,3 +1,6 @@
+import _ContactUs from './ContactUs';
+export const ContactUs = _ContactUs;
+
 import _Home from './Home';
 export const Home = _Home;
 

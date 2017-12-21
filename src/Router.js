@@ -19,8 +19,7 @@ import MenuSide from '@components/LeftMenu/MenuScale';
 let store = null;
 if (__DEV__) {
   store = Reactotron.createStore(reducers, compose(applyMiddleware(...middleware), autoRehydrate()));
-}
-else {
+} else {
   store = compose(applyMiddleware(...middleware), autoRehydrate())(createStore)(reducers);
 }
 
@@ -29,6 +28,7 @@ persistStore(store, {
   blacklist: [
     'netInfo',
     'toast',
+    'nav',
   ]
 });
 
