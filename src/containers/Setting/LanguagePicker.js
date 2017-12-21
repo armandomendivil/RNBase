@@ -35,7 +35,7 @@ class LanguagePicker extends Component {
 
                             setTimeout(() => {
                              RNRestart.Restart();
-                          }, 3000)
+                          }, 2000)
 
                         }
                     },

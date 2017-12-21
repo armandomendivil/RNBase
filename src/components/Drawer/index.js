@@ -17,7 +17,7 @@ class Drawer extends Component {
     EventEmitter.addListener(Constants.EmitCode.MenuReload, this.setLanguage.bind(this));
   }
 
-  setLanguage(lang){
+  setLanguage(lang) {
     Languages.setLanguage(lang);
     this.setState({ reload: true });
   }
@@ -39,7 +39,7 @@ class Drawer extends Component {
         icon: Icons.MaterialCommunityIcons.Settings,
       },
       {
-        text: 'Contact Us',
+        text: Languages.ContactUs,
         onPress: () => goToScreen('ContactUsScreen', undefined, true),
         icon: Icons.MaterialCommunityIcons.Pin,
       },

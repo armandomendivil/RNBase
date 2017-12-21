@@ -1,6 +1,6 @@
-import { persistStore, persistCombineReducers } from 'redux-persist'
+import { persistStore, persistCombineReducers } from 'redux-persist';
 import { AsyncStorage } from 'react-native';
-import { createStore, applyMiddleware, compose } from 'redux'
+import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk'
 // import { createLogger } from 'redux-logger'
 import { Constants, Device, Languages } from '@common';

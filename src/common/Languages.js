@@ -13,11 +13,13 @@ export default new LocalizedStrings({
     noConnection: 'NO INTERNET ACCESS',
 
     //settings
+    Home: 'Home',
     Settings: 'Settings',
     BASICSETTINGS: 'BASIC SETTINGS',
     Language: 'Language',
     INFO: 'INFO',
     About: 'About us',
+    ContactUs: 'Contact us',
 
     //language
     AvailableLanguages: 'Available Languages',
@@ -36,11 +38,13 @@ export default new LocalizedStrings({
     noConnection: 'No hay conexión a Internet',
 
     //settings
+    Home: 'Inicio',
     Settings: 'Configuración',
     BASICSETTINGS: 'Configuración básica',
     Language: 'Lenguage',
     INFO: 'INFO',
     About: 'Acerca de nosotros',
+    ContactUs: 'Contáctanos',
 
     //language
     AvailableLanguages: 'Lenguages disponibles',
