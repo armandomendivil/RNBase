@@ -5,9 +5,9 @@ const types = {
 };
 
 export const actions = {
-    switchLanguage: (dispatch,lang) => {
-      dispatch({type : types.SWITCH_LANGUAGE, lang})
-    },
+  switchLanguage: (dispatch,lang) => {
+    dispatch({type : types.SWITCH_LANGUAGE, lang})
+  },
 };
 
 const initialState = {
