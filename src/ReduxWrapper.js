@@ -1,20 +1,14 @@
 import React, { Component } from 'react';
 import { AsyncStorage } from 'react-native';
-import { Provider, connect } from 'react-redux';
-import { applyMiddleware, combineReducers, compose, createStore } from 'redux';
-import { persistStore, autoRehydrate } from 'redux-persist';
+import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/es/integration/react';
-import thunk from 'redux-thunk';
-import { Constants, Device, Languages } from '@common';
 import OneSignal from 'react-native-onesignal';
-import { EventEmitter } from '@app/Omni'
-import reducers from '@redux';
-import Reactotron from 'reactotron-react-native';
-// import './ReactotronConfig';
-
-import Router from './Router';
 
 import app from '@redux';
+import { Device } from '@common';
+import { EventEmitter } from '@app/Omni';
+
+import Router from './Router';
 
 const config = {
   key: 'root',
@@ -23,30 +17,7 @@ const config = {
 
 import configureStore from './store/configureStore';
 
-const { persistor, store } = configureStore()
-
-// const middleware = [
-//   thunk,
-// ];
-//
-// var store = null;
-// if (__DEV__) {
-//   store = Reactotron.createStore(reducers, compose(applyMiddleware(...middleware), autoRehydrate({log: true})));
-// } else {
-//   store = compose(applyMiddleware(...middleware), autoRehydrate())(createStore)(reducers);
-// }
-//
-//
-// persistStore(store, {
-//   storage: AsyncStorage,
-//   blacklist: [
-//     'netInfo',
-//     'toast',
-//   ],
-// }, () => {
-//   Languages.setLanguage(store.getState().language.lang)
-//   EventEmitter.emit(Constants.EmitCode.MenuReload, store.getState().language.lang)
-// });
+const { persistor, store } = configureStore();
 
 export default class ReduxWrapper extends Component {
   state = { appIsReady: false };
