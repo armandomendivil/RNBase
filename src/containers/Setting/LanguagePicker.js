@@ -52,7 +52,7 @@ class LanguagePicker extends Component {
                                       width: undefined,
                                   }}>
                     <Icon name={selected ? Icons.Ionicons.RatioOn : Icons.Ionicons.RatioOff} size={15}/>
-                    <Text style={selected ? {fontWeight: 'bold', marginLeft: 10,} : {marginLeft: 10,}}>{option}</Text>
+                    <Text style={selected ? {fontWeight: 'bold', width: null, height: null, marginLeft: 10,} : {marginLeft: 10,}}>{option}</Text>
                 </TouchableOpacity>
             )
         }
