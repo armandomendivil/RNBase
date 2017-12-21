@@ -1,48 +1,16 @@
 import React, { Component } from 'react';
 import { View, StatusBar, AsyncStorage } from 'react-native';
-import { toast, closeDrawer, EventEmitter } from './Omni';
 import { PersistGate } from 'redux-persist/es/integration/react';
-import { Config, Device, Styles, Languages, Constants } from "@common";
+
+import { Config, Device, Styles, Languages, Constants } from '@common';
 import { MyToast, MyNetInfo } from '@containers';
 import Navigation from '@navigation';
-
-import { applyMiddleware, compose, createStore } from 'redux';
-import { persistStore, autoRehydrate } from 'redux-persist';
-import { Provider } from 'react-redux';
-import thunk from 'redux-thunk';
-import Reactotron from 'reactotron-react-native'
-// import './ReactotronConfig';
-const middleware = [thunk];
-import reducers from '@redux';
-
 import MenuSide from '@components/LeftMenu/MenuScale';
+
+import { toast, closeDrawer, EventEmitter } from './Omni';
 import configureStore from './store/configureStore';
 
-const { persistor, store } = configureStore()
-
-const onBeforeLift = () => {
-  // take some action before the gate lifts
-}
-
-//
-// let store = null;
-// if (__DEV__) {
-//   store = Reactotron.createStore(reducers, compose(applyMiddleware(...middleware), autoRehydrate()));
-// } else {
-//   store = compose(applyMiddleware(...middleware), autoRehydrate())(createStore)(reducers);
-// }
-//
-//
-// persistStore(store, {
-//   storage: AsyncStorage,
-//   blacklist: [
-//     'netInfo',
-//     'toast',
-//   ],
-// }, () => {
-//   Languages.setLanguage(store.getState().language.lang)
-//   EventEmitter.emit(Constants.EmitCode.MenuReload, store.getState().language.lang)
-// });
+const { persistor, store } = configureStore();
 
 export default class Router extends Component {
   goToScreen = (routeName, params, isReset: boolean = false) => {
@@ -51,7 +19,7 @@ export default class Router extends Component {
       return toast('Cannot navigate');
     }
 
-    navigator.dispatch({type: 'Navigation/NAVIGATE', routeName, params});
+    navigator.dispatch({ type: 'Navigation/NAVIGATE', routeName, params });
     closeDrawer();
   }
 
@@ -61,7 +29,6 @@ export default class Router extends Component {
 
   render() {
     return (
-
         <MenuSide
           goToScreen={this.goToScreen}
           routes={
@@ -73,7 +40,6 @@ export default class Router extends Component {
             </View>
           }
         />
-
     )
   }
 }
